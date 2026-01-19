@@ -14,7 +14,7 @@ export function CTA() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-orange-600 to-purple-500 rounded-3xl p-12 md:p-16 text-center text-white"
+          className="bg-linear-to-br from-orange-600 to-purple-500 rounded-3xl p-12 md:p-16 text-center text-white"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -25,6 +25,7 @@ export function CTA() {
           >
             Ready to Better Your Workflow?
           </motion.h2>
+        <div className="rounded-3xl p-12 md:p-16 text-center text-white">
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -46,8 +47,8 @@ export function CTA() {
           >
             <Button
               size="lg"
-              onClick={() => navigate("/register")}
-              className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8"
+              onClick={() => { navigate("/login"); }}
+              className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 cursor-pointer"
             >
               Get Started Now
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -66,6 +67,17 @@ export function CTA() {
 
           {/*
           <p className="mt-6 text-sm opacity-75">
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 cursor-pointer" onClick={() => {navigate("/login")}}>
+              Get Started Now
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            {/* <Button size="lg" variant="outline" className="border-white text-purple bg-purple hover:bg-white/10 text-lg px-8">
+              Schedule a Demo
+            </Button> */}
+          </div>
+          {/* <p className="mt-6 text-sm opacity-75">
             Free 14-day trial • No credit card required • Cancel anytime
           </p>
           */}

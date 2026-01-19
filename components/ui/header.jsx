@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, MenuItem, MenuItems, MenuButton } from "@headlessui/react";
 import { Menu as MenuIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -15,15 +17,17 @@ export function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         
         {/* Logo */}
-        <motion.div
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex items-center gap-2"
-        >
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg" />
-          <span className="text-xl font-semibold">NodeUg</span>
-        </motion.div>
+        <Link to="/">
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center gap-2"
+          >
+            <div className="w-8 h-8 bg-linear-to-br from-blue-600 to-purple-600 rounded-lg" />
+            <span className="text-xl font-semibold">NodeUg</span>
+          </motion.div>
+        </Link>
 
         {/* Desktop Nav */}
         <motion.nav
@@ -32,9 +36,9 @@ export function Header() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="hidden md:flex items-center gap-8"
         >
-          <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
+          {/* <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
           <a href="#testimonials" className="text-gray-600 hover:text-gray-900">Testimonials</a>
-          <a href="#contact" className="text-gray-600 hover:text-gray-900">Contact</a>
+          <a href="#contact" className="text-gray-600 hover:text-gray-900">Contact</a> */}
         </motion.nav>
 
         {/* Actions */}
@@ -44,15 +48,12 @@ export function Header() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex items-center gap-4"
         >
-          <Link to="/login">
-            <Button variant="ghost" className="hidden md:inline-flex">
-              Sign In
-            </Button>
-          </Link>
 
-          <Link to="/signup">
-            <Button>Get Started</Button>
-          </Link>
+          <Button variant="ghost" className="hidden md:inline-flex cursor-pointer" onClick={() => { navigate("/login"); }}>
+            Sign In
+          </Button>
+
+          <Button className="cursor-pointer" onClick={() => { navigate("/login"); }}>Get Started</Button>
 
           {/* Mobile Dropdown */}
           <Menu as="div" className="relative md:hidden">

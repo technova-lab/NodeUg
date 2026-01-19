@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -31,11 +30,10 @@ export function Hero() {
             </motion.p>
             
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col sm:flex-row gap-4">
-              <Link to="/login"><Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8 cursor-pointer" onClick={() => { navigate("/login"); }}>
                 Get Started Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              </Link>
               {/* <Button size="lg" variant="outline" className="text-lg px-8">
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
@@ -61,7 +59,7 @@ export function Hero() {
           </div>
 
           <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7, delay: 0.3 }} className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-blue-400 to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
             <img
               src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Dashboard preview"

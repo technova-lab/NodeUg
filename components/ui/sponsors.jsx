@@ -32,7 +32,7 @@ export function Sponsors() {
               <div className="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity">
                 <motion.div whileHover={{ scale: 1.1 , rotate: 5}} 
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-16 h-16 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-blue-50 group-hover:to-purple-50 transition-colors">
+                className="w-16 h-16 rounded-xl bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-blue-50 group-hover:to-purple-50 transition-colors">
                   <span className="text-xl font-bold text-gray-600 group-hover:text-blue-600 transition-colors">
                     {sponsor.logo}
                   </span>

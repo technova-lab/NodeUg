@@ -89,7 +89,7 @@ export function Features() {
                     delay: index * 0.1 + 0.2,
                     type: "spring"
                   }}
-                  className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4"
+                  className="w-12 h-12 bg-linear-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4"
                 >
                   <Icon className="h-6 w-6 text-white" />
                 </motion.div>
@@ -160,7 +160,7 @@ export function Features() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <svg
                       className="w-4 h-4 text-green-600"
                       fill="none"
